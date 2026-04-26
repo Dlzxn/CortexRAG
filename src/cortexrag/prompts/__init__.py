@@ -1,0 +1,1 @@
+from cortexrag.prompts.promt_func import get_topik_prompt
