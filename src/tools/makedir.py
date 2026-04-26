@@ -1,5 +1,17 @@
 import os
 
 
+from src.state import Topik, WorkerInput
+
+
+
 def makedir(name: str):
-    os.makedirs(f'storage/{name}')
+    try:
+        os.makedirs(f'storage/{name}', exist_ok=True)
+    except Exception as e:
+        print(f'[UNK] {e}')
+
+def make_all_dir(state: Topik):
+    dirs = state.main_topics
+    for dir in dirs:
+        makedir(dir)
