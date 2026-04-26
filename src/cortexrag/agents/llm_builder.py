@@ -2,8 +2,8 @@ from langchain_core.language_models.chat_models import BaseChatModel
 from langgraph.types import Send
 
 
-from src.state import Topik, WorkerInput, TopikList, ResearchData
-from src.tools import create_md
+from pyrag.state import Topik, WorkerInput, ResearchData
+from pyrag.tools import create_md
 
 
 
@@ -58,7 +58,6 @@ class Manager:
             return {'main_topics': topics}
 
         def topic(state: WorkerInput):
-            print(state)
             return {'current_topics': [self.action['topic'](self.topic_prompt + state.get('topic')).split(',')]}
 
         if call_num == 1:

@@ -1,7 +1,7 @@
 import os
 
 
-from src.state import Topik, WorkerInput
+from pyrag.state import Topik, WorkerInput
 
 
 

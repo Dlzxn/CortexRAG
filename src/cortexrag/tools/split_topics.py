@@ -1,4 +1,4 @@
-from src.state import Topik
+from pyrag.state import Topik
 
 
 

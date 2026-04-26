@@ -1,0 +1,1 @@
+from pyrag.prompts.promt_func import get_topik_prompt
