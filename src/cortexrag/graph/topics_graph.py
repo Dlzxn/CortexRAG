@@ -2,7 +2,7 @@ from langgraph.graph import StateGraph, START, END
 
 from cortexrag.prompts import get_topik_prompt
 from cortexrag.agents import Manager
-from cortexrag.tools import make_all_dir
+from cortexrag.tools import make_all_dir, make_start_dir
 from cortexrag.state import Topik
 
 
@@ -28,4 +28,5 @@ class TopicsGraph:
 
 
     def invoke(self, data):
+        make_start_dir()
         return self._build_graph().invoke(data)
