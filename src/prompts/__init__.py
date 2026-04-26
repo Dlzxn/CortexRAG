@@ -1,0 +1,1 @@
+from src.prompts.promt_func import get_topik_prompt
