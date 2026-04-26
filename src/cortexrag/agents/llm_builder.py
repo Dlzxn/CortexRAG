@@ -2,8 +2,8 @@ from langchain_core.language_models.chat_models import BaseChatModel
 from langgraph.types import Send
 
 
-from pyrag.state import Topik, WorkerInput, ResearchData
-from pyrag.tools import create_md
+from cortexrag.state import Topik, WorkerInput, ResearchData
+from cortexrag.tools import create_md
 
 
 

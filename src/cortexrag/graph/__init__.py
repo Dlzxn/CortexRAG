@@ -1,1 +1,1 @@
-from pyrag.graph.topics_graph import TopicsGraph
+from cortexrag.graph.topics_graph import TopicsGraph

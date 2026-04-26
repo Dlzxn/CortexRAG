@@ -1,7 +1,7 @@
 import os
 
 
-from pyrag.state import Topik, WorkerInput
+from cortexrag.state import Topik, WorkerInput
 
 
 

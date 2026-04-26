@@ -1,1 +1,1 @@
-from pyrag.state.topik_state import Topik, WorkerInput, TopikList, ResearchData
+from cortexrag.state.topik_state import Topik, WorkerInput, TopikList, ResearchData

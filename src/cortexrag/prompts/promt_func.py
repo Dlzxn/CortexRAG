@@ -1,4 +1,4 @@
-from pyrag.prompts.base_prompts import EN_TOPIK_PROMPT, RU_TOPIK_PROMPT
+from cortexrag.prompts.base_prompts import EN_TOPIK_PROMPT, RU_TOPIK_PROMPT
 
 
 def get_topik_prompt(lang: str, topic: str):

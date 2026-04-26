@@ -1,7 +1,7 @@
 from typing import Iterable
 
-from pyrag.core import EngineAbstract
-from pyrag.graph import TopicsGraph
+from cortexrag.core import EngineAbstract
+from cortexrag.graph import TopicsGraph
 
 
 class Engine(EngineAbstract):

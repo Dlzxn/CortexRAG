@@ -1,1 +1,1 @@
-from pyrag.agents.llm_builder import Manager
+from cortexrag.agents.llm_builder import Manager

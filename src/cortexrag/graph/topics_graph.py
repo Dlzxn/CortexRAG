@@ -1,9 +1,9 @@
 from langgraph.graph import StateGraph, START, END
 
-from pyrag.prompts import get_topik_prompt
-from pyrag.agents import Manager
-from pyrag.tools import make_all_dir
-from pyrag.state import Topik
+from cortexrag.prompts import get_topik_prompt
+from cortexrag.agents import Manager
+from cortexrag.tools import make_all_dir
+from cortexrag.state import Topik
 
 
 class TopicsGraph:
