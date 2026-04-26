@@ -16,4 +16,4 @@ def make_all_dir(state: Topik):
 
 def make_start_dir():
     if not os.path.exists('storage'):
-        os.makedir('storage')
+        os.makedirs('storage')
