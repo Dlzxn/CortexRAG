@@ -1,1 +1,1 @@
-from cortexrag.prompts.promt_func import get_topik_prompt
+from cortexrag.prompts.promt_func import get_topik_prompt, get_research_prompt
