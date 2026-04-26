@@ -1,16 +1,16 @@
 from langgraph.graph import StateGraph, START, END
 
-from cortexrag.prompts import get_topik_prompt
+
 from cortexrag.agents import Manager
 from cortexrag.tools import make_all_dir, make_start_dir
 from cortexrag.state import Topik
 
 
+
 class TopicsGraph:
     def __init__(self, models: tuple, topic: str, lang: str = 'en'):
-        self.topic_prompt = get_topik_prompt(lang, topic)
         self.graph = StateGraph(Topik)
-        self.manager = Manager(models, self.topic_prompt)
+        self.manager = Manager(models, topic, lang)
 
     def _build_graph(self):
         self.graph.add_node('main_topic', self.manager.topic(1))
