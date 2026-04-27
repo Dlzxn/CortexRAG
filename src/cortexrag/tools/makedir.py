@@ -1,8 +1,6 @@
 import os
 
-
 from cortexrag.state import Topik, WorkerInput
-
 
 
 def makedir(name: str):
@@ -15,3 +13,7 @@ def make_all_dir(state: Topik):
     dirs = state.main_topics
     for dir in dirs:
         makedir(dir)
+
+def make_start_dir():
+    if not os.path.exists('storage'):
+        os.makedirs('storage')

@@ -4,6 +4,7 @@ from langgraph.types import Send
 
 from cortexrag.state import Topik, WorkerInput, ResearchData
 from cortexrag.tools import create_md
+from cortexrag.prompts import get_topik_prompt, get_research_prompt
 
 
 
@@ -24,12 +25,13 @@ class ModelFactory:
 
 
 class Manager:
-    def __init__(self, models: tuple[BaseChatModel], topic_prompt):
+    def __init__(self, models: tuple[BaseChatModel], topic, lang):
         factory = ModelFactory()
         self.models: list[LLM] = factory(models)
         self.action: dict = {}
         self.iter = 0
-        self.topic_prompt = topic_prompt
+        self.topic_prompt = get_topik_prompt(lang)
+        self.research_prompt = get_research_prompt(lang)
 
         self._distribution_role()
 
@@ -70,10 +72,10 @@ class Manager:
         input_topic = state.get('topic')
         name = state.get('name_dir')
         if self.iter == len(self.action['research']) - 1:
-            response = self.action['research'][self.iter](input_topic)
+            response = self.action['research'][self.iter](self.research_prompt + input_topic)
             self.iter == 0
         else:
-            response = self.action['research'][self.iter](input_topic)
+            response = self.action['research'][self.iter](self.research_prompt + input_topic)
             self.iter += 1
         create_md(f'{name}/{input_topic}.md', response)
 

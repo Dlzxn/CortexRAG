@@ -1,11 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "autorag"
-version = "0.1.0"
-description = "Add your description here"
+name = "cortexrag"
+version = "0.1.1"
+description = "CortexRAG library for quick search and creation of RAG systems"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 dependencies = [
     "langchain>=1.2.15",
     "langgraph>=1.1.9",
     "pydantic>=2.13.3",
 ]
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -28,7 +28,8 @@ class Engine(EngineAbstract):
                     lang=self.lang
                 ) for topic in self.topic]
         except Exception as e:
-            raise ValueError('param::topic must be string or iter')
+            print(e)
+            raise ValueError('param::topic must be string or iter object')
 
 
     def build(self):
