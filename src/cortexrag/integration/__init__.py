@@ -1,0 +1,1 @@
+from cortexrag.core.base_model import BaseChatModel
