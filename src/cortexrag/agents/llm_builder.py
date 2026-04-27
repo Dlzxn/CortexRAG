@@ -1,10 +1,10 @@
-from langchain_core.language_models.chat_models import BaseChatModel
 from langgraph.types import Send
 
 
 from cortexrag.state import Topik, WorkerInput, ResearchData
 from cortexrag.tools import create_md
 from cortexrag.prompts import get_topik_prompt, get_research_prompt
+from cortexrag.core import BaseChatModel
 
 
 
@@ -13,7 +13,7 @@ class LLM:
         self.model = model
 
     def __call__(self, message):
-        return self.model.invoke(message).content
+        return self.model.generate(message)
 
 
 class ModelFactory:
