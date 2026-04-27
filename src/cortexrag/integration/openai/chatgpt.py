@@ -1,4 +1,9 @@
-from openai import OpenAI
+try:
+    from chatgpt import OpenAI
+except Exception as e:
+    raise ImportError(
+        'To use OpenAI models, type: pip install openai'
+    )
 
 
 from cortexrag.core import BaseChatModel

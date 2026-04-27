@@ -1,4 +1,9 @@
-from google import genai
+try:
+    from google import genai
+except Exception as e:
+    raise ImportError(
+        'To use Google models, type: pip install google-genai'
+    )
 
 
 from cortexrag.core import BaseChatModel
@@ -11,8 +16,9 @@ class GeminiModel(BaseChatModel):
         self.model = model_name
 
     def generate(self, message: str):
-        response = self.client.generate_content(
+        print(type(message))
+        response = self.client.models.generate_content(
             model=self.model,
-            content=message
+            contents=message
         )
         return response.text

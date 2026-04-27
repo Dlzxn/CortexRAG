@@ -1,4 +1,7 @@
-import anthropic
+try:
+    import anthropic
+except Exception as e:
+    raise ImportError('To use anthropic models, type: pip install anthropic')
 
 
 from cortexrag.core import BaseChatModel

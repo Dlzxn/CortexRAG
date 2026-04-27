@@ -1,0 +1,1 @@
+from src.cortexrag.integration.transformers.transformers import TransformersModel
