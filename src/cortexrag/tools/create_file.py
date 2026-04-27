@@ -9,7 +9,7 @@ def create_md(path: str, text: str):
     :return:
     '''
     try:
-        with open(f'storage/{path}', 'w') as f:
+        with open(f'storage/{path}', 'w', encoding='utf-8') as f:
             f.write(text)
 
     except FileNotFoundError:
