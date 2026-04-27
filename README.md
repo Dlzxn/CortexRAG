@@ -59,8 +59,56 @@ engine = Engine(
 # 3. Execute the Autonomous Research & Indexing
 engine.build()
 ```
+### Library integration module
+**Gemini:**
+```python
+from cortexrag.integration.google import GeminiModel
+from google import genai
 
----
+
+client = genai.Client(
+        api_key=API_KEY,
+    )
+
+model = GeminiModel(client, 'gemini-3-flash-preview')
+```
+**Claude:**
+```python
+from cortexrag.integration.anthropic import ClaudeModel
+```
+**ChatGPT:**
+```python
+from cortexrag.integration.openai import OpenAIModel
+```
+**Transformers:**
+```python
+from cortexrag.integration.transformers import TransformersModel
+from cortexrag import Engine
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+
+MODEL_NAME = 'model_name'
+
+model = AutoModelForCausalLM.from_pretrained(MODEL_NAME)
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+
+
+model = TransformersModel(tokenizer, model)
+engine = Engine(
+        topic='Cars',
+        models=(model, model),
+        lang='ru'
+)
+engine.build()
+```
+**Custom Models:**
+```python
+from cortexrag.integration import BaseChatModel
+class CastomModel(BaseChatModel):
+    ...
+    def generate(self, message: str):
+        ...
+```
 
 ## 🏗 System Architecture
 
